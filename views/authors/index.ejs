@@ -17,9 +17,8 @@
         <div class="btn-row">
             <a class="btn btn-primary" href="/authors/<%= author.id %>">View</a>
             <a class="btn btn-primary" href="/authors/<%= author.id %>/edit">Edit</a>
-            <form method="POST" action="`/authors/${author.id}`?_method=DELETE">
-                <button class="btn btn-danger" type="submit">Delete</button>
-            </form>
+            <%- include('../partials/deleteForm',
+                  { url: `/authors/${author.id}` }) %>
         </div>
     </div>
 <% }) %>
